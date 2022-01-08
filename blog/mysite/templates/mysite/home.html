@@ -1,0 +1,124 @@
+
+<!-- ГЛАВНАЯ СТРАНИЦА -->
+
+<!-- extends - эта страница является расширением базовой (описывает того что нет) - в ней есь блоки-->
+{% extends './base.html' %}
+{% load static %} <!-- обязательно после extends -->
+
+<!--    TITLE УНИКАЛЬНЫЙ -->
+
+{% block title %}Главная страница моего блога{% endblock %}
+
+<!--ЗАГОЛОВОК-->
+
+{% block header %}
+<div class="container-fluid home-slider">
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-color: #343a40!important">
+                <div class="carousel-caption d-none d-md-block">
+
+                <h1>Добро пожаловать!</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!--    ОСНОВНОЙ БЛОК КОНТЕНТА -->
+
+{% block content %}
+    <div class="container-fluid">
+<!--      <h1 class="my-3 text-center">Главная страница</h1>-->
+
+        <!-- ВСТУПИТЕЛЬНАЯ РЕЧЬ-->
+
+        <style>
+            .intro{
+                color: red;
+            }
+        </style>
+
+
+        <div class="col-12 my-3">
+            <div class="card border-success introduction">
+<!--              <h4 class="card-header text-center">Описание:</h4>-->
+              <div class="card-body gray_2">
+                <!-- формат текста бутстрап https://bootstrap-4.ru/docs/5.0/utilities/text/ -->
+                <p class="fs-3 fw-bold">Привет!</p>
+                <p class="fs-4" style="">Меня зовут <b>Борисов Дмитрий</b> и вы находитесь на моем сайте! </p>
+                <p class="fs-4">Я аспирант "Московского Физико-Технического Института" и сделал этот сайт в качестве хобби.<p>
+                <p class="fs-4 ">Мои увлечения это радиотехника и программирование. И для написания  сайта я использовал фреймворк Django на python.</p>
+              </div>
+            </div>
+        </div>
+
+
+      <div class="row">
+
+        <!-- ЛЕВАЯ КОЛОНКА-->
+
+        <div class="col-md-6">
+
+          <!-- КАРТТОЧКА 1 - обучение -->
+
+          <div class="card mb-4 shadow-sm border-success">
+            <h4 class="card-header text-center gray_1">Обучение</h4>
+            <img src="{% static 'img/study_cut.jpg' %}" alt="" class="card-img-top ">
+            <div class="card-body gray_2">
+              <p class="card-text">
+                <ul class="">
+                    <li>В 2019 году я закончил бакалавриат Калужского филиала <b>"Московского Государственного Технического Университета им Н.Э.Баумана"</b>.</li>
+                    <li>Моя специальность бакалавриата - "Проектирование и производство радио электронной аппаратуры".</li>
+                    <li>В 2021 году я закончил в магистратуру <b>"Московского Физико-Технический Институт"</b> </b>.</li>
+                    <li>Моя специальность магистратуры - "Прикладная математика и физика".</li>
+                    <li>В данный момент я являюсь аспирантом МФТИ кафедры <b>"Радиофизики и технической кибернетики"</b>
+                        и веду лабораторные работы по "Цифровой обработке сигналов".</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+
+          <!-- КАРТТОЧКА 2 - Хобби -->
+
+           <div class="card mb-4 shadow-sm border-success">
+            <h4 class="card-header text-center gray_1">Интересы</h4>
+            <img src="{% static 'img/study_cut.jpg' %}" alt="" class="card-img-top ">
+            <div class="card-body gray_2">
+              <div class="card-text">
+
+                <p>Я интересуюсь программирование. Я пытался изучать такие языки как С++ и C# но выбрал для себя python ввиду его удобства и понятности.
+                В данный момент я углубленно изучаю язык python и его фреймворки. Прохожу различные курсы и читаю статьи.
+                Также интересуюсь машинное обучение.</p>
+
+                <p>Моя научная работа посвящена "Модификации методы электромагнитного расчета".
+                В своей работе я использую МАТЛАБ для быстрого прототипирование, расчета и получение графиков.
+                А также некоторые расчета выполняю на pythom.</p>
+
+                <p>Еще одним моим интересом является робототехника.
+                Поскольку моя специальность в бакалавриате была связана с ней, я неплохо разбираюсь в этой области.
+                В магистратуре я изучал микроконтроллеры на платформе "Arduino" и "Raspberry Pi" и делал простые проекты на них.</p>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА -->
+
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm border-success">
+            <img src="{% static 'img/borisov.jpg' %}" alt="" class="card-img-top">
+            <div class="card-body gray_2">
+              <h4 class="card-title text-center fs-5">Борисов Дмитрий Алексеевич</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+{% endblock %}
